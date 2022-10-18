@@ -1,8 +1,10 @@
+/* eslint-disable */
 const path = require('path');
 const { resolve } = path;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader/dist/index');
 const webpack = require('webpack');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 const config = {
   mode: 'development',
@@ -64,6 +66,11 @@ const config = {
         __VUE_OPTIONS_API__: false,
         __VUE_PROD_DEVTOOLS__: false
     }),
+    new ESLintPlugin({
+      extensions: ['js', 'json', 'vue'],
+      exclude: 'node_modules',
+      quiet: true
+    })
   ]
 };
 
