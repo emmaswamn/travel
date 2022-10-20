@@ -16,6 +16,11 @@ const config = {
     filename: '[name][contenthash].js',
     clean:true
   },
+  resolve: {
+    alias: {
+      styles: path.resolve(__dirname, 'src/assets/styles')
+    },
+  },
   devtool: 'source-map',
   devServer: {
     static: {
@@ -36,6 +41,14 @@ const config = {
             ]
         },
         {
+          test: /\.styl(us)?$/,
+          use: [
+            'vue-style-loader',
+            'css-loader',
+            'stylus-loader'
+          ], // compiles Styl to CSS
+        },
+        {
             test: /\.css$/,
             use: [
                 'style-loader',
@@ -50,7 +63,7 @@ const config = {
         {
             test: /\.(png|svg|jpg|jpeg|gif)$/i,
             type: 'asset/resource'
-        }
+        },
     ]
   },
   plugins: [

@@ -1,11 +1,10 @@
 import { createRouter,createWebHistory } from 'vue-router';
-import HomeView from './component/HomeView.vue';
+import HomeView from './pages/home/HomeView.vue';
 
 const router = createRouter({
     history:createWebHistory(),
     routes: [
-        {path: '/', redirect: '/home'},
-        {path: '/home', component: HomeView}
+        {path: '/', component: HomeView}
     ]
 });
 
