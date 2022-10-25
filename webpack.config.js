@@ -14,6 +14,7 @@ const config = {
   output: {
     path: resolve(__dirname, 'dist'), 
     filename: '[name][contenthash].js',
+    publicPath: '/dist/',
     clean:true
   },
   resolve: {

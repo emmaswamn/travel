@@ -4,7 +4,7 @@ import CityView from './pages/city/CityView.vue'
 import DetailView from './pages/detail/DetailView.vue'
 
 const router = createRouter({
-    history:createWebHistory(),
+    history:createWebHistory('/dist/index.html'),
     routes: [
         {path: '/', component: HomeView},
         {path: '/city', component: CityView},
